@@ -1183,9 +1183,14 @@ Instead, edit gulp/templates/sprite */
 @media (min-width: 800px) {
 
 .site-header {
+    position: fixed;
     background-color: rgba(47,85,114, .3)
 
 }
+
+    .site-header--dark {
+      background-color: rgba(23, 51, 72, .85);
+    }
   }
 
 @media (min-width: 800px) {
@@ -1212,6 +1217,12 @@ Instead, edit gulp/templates/sprite */
             transform-origin: 50% 0;
     padding: 25px 36px;
     top: 0;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    -moz-transition: transform .3s ease-out, -moz-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out, -moz-transform .3s ease-out, -o-transform .3s ease-out;
 
   }
 
@@ -1226,6 +1237,14 @@ Instead, edit gulp/templates/sprite */
               transform: translateX(0)
 
   }
+
+      .site-header--dark .site-header__logo {
+        -webkit-transform: scale(.565);
+           -moz-transform: scale(.565);
+            -ms-transform: scale(.565);
+             -o-transform: scale(.565);
+                transform: scale(.565);
+      }
   }
 
 .site-header__logo__graphic {
@@ -1455,6 +1474,10 @@ Instead, edit gulp/templates/sprite */
       padding: 12px 0;
       background-color: transparent
   }
+
+      .primary-nav a.is-current-link {
+        color: #fabb69;
+      }
   }
 
 .reveal-item {
